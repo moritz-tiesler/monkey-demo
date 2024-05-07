@@ -39,8 +39,11 @@ let get = fn(arr, i) {
 let double = fn(x) {x + x};
 
 let optElem = get([1, 2], 1);
-let optMapped = optElem.optionMap(double);
+let optDoubled = optElem.optionMap(double);
+let doubled = optDoubled.unwrap();
+puts(doubled)
 
-let res = optMapped.unwrap();
-puts(res)
+let optTripled = optElem.optionMap {x -> x + x + x}
+let tripled = optTripled.unwrap();
+puts(tripled)
 
